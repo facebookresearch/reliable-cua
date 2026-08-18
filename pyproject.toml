@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reliable-cua"
+version = "0.1.0"
+description = "Statistical evaluation for PRISM-compliant Computer-Using Agent benchmarks"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.7",
+    "matplotlib>=3.5",
+    "seaborn>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["reliable_cua*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
